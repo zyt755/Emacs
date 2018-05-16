@@ -47,5 +47,13 @@
 (setq enable-recursive-minibuffers t)
 
 
+;; To load at the start up
+(require ' reveal-in-osx-finder)
+
+
+
+
+
+
 
 (provide ' init-packages)

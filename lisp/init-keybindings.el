@@ -1,6 +1,4 @@
 
-
-
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -18,7 +16,36 @@
 (global-set-key (kbd "C-h C-v") ' find-variable)
 (global-set-key (kbd "C-h C-k") ' find-function-on-key)
 
+;; github
 (global-set-key (kbd "C-c p f") ' counsel-git)
+
+;;auto-tab
+(global-set-key (kbd "C-M-\\") ' indent-region-or-buffer)
+
+;; auto-comapny path
+(global-set-key (kbd "s-/") ' hippie-expand)
+
+
+(with-eval-after-load ' dired
+(define-key dired-mode-map (kbd "RET") ' dired-find-alternate-file))
+
+;; If you want to configure a keybinding (e.g. C-c z), add the following
+(global-set-key (kbd "C-c z") ' reveal-in-osx-finder)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

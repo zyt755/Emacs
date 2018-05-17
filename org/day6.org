@@ -1,0 +1,42 @@
+* Spacemacs Rocks Season 2 (Day6)
+
+** Bonus Time
+
+use org-capture to take notes
+
+#+BEGIN_SRC 
+
+
+#+END_SRC
+
+** clean up configs
+
+1. move keybingds into one place
+
+2.make C-n and C-p to select company condicate
+
+** batch rename files
+
+1. press 'C-x C-q' in dired mode
+
+2. use expand-region and iedit to batch change files
+
+** search and replace
+
+*** install helm-ag
+
+1. at first, you should install ag
+   search speed: ag > pt > ack > grep
+
+#+BEGIN_SRC 
+
+#+END_SRC
+
+
+** Show javascript errors with flycheck
+
+1. flycheck-checkers
+
+2.eslint
+
+** Snippets and auto snippet

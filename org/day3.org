@@ -1,0 +1,70 @@
+* Spacemacs Rocks Episode 2 (Day Three)
+
+** Split your configs into multiple files
+
+1. use Git to manage your init file
+
+2. help windows is annoying.
+
+#+BEGIN_SRC 
+
+;; add popwin mode
+;; why this line is needed
+
+(require ' popwin)
+(popwin-mode t)
+#+END_SRC
+
+
+3. load-file ;; load one specific file
+   load      ;; load-path to find the file, find .elc first, if cannot find .elc, then, find .el
+   require   ;; find the file that satisfies some features
+   auto-load ;; 
+
+;; M-x byte-compile-file
+       byte-recompile-file
+
+#+BEGIN_SRC 
+
+;;;###autolaod
+(autoload ' test-autoload "init-better-defaults")
+(test-autoload)
+
+#+END_SRC
+
+4. features, provide and require, autoload
+
+5. naming conventions
+   zyt755/xxx
+   minor mode or major mode.
+   e.g. niubi-mode => niubi-xxx
+
+   all names should have prefixs
+
+6. define your abbrevs
+
+#+BEGIN_SRC 
+
+
+#+END_SRC
+
+7.how to organize your configs
+  
+    - init-packages.el
+    - init-ui.el
+    - init-better-defaults.el
+    - init-keybingdings.el
+    - custom.el
+
+#+BEGIN_SRC 
+(setq custom-file (expend-file-name "custom.el" user-emacs-directory))
+
+#+END_SRC
+
+8.use 'counsel-git' to find file in git manage project.
+
+#+BEGIN_SRC 
+(global-set-key (kbd "C-c p f") ' counsel-git)
+
+#+END_SRC
+

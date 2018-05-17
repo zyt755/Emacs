@@ -1,0 +1,20 @@
+*spacemacs Rocks Episode ( Day two )
+
+** Fix some annoying stuff
+1.make 
+
+2.
+
+
+
+
+** Make Emacs more fancy
+
+**Improve package system more powerful with Melpa
+
+#+BEGIN_SRC 
+
+
+#+END_SRC
+
+1. install a theme (monokai)

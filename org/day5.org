@@ -1,0 +1,112 @@
+* Spacemacs Rocks Season2( Day 5)
+
+** Fix smartparen quote issue
+
+#+BEGIN_SRC 
+
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))  
+     (t (save-excursion 
+        (ignore-errors (backward-up-list)) 
+        (funcall )))))
+
+(sp-local-pair ' emacs-lisp-mode "'" nil : actions nil)
+
+#+END_SRC
+
+** Editing large web page
+
+#+BEGIN_SRC 
+
+defun hidden-dos-oel ()
+  "Do not show ^M in files containing mix ed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun remove-dos-eol()
+  "Replace DOS oelns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
+
+#+END_SRC
+** Add more useful packages for web development
+
+*** web-mode
+
+toggle indent in web-mode
+
+#+BEGIN_SRC 
+(defun my-web-mode-indent-setup()
+  (setq web-mode-markup-indent-offset 2) ;; web-mode, html tag in html file
+  (setq web-mode-css-indent-offset 2)    ;; web-mode, css in html file
+  (setq web-mode-code-indent-offset 2)   ;; web-mode, js code in html file
+  )
+
+(add-hook ' web-mode-hook ' my-web-mode-indent-setup)
+
+(defun my-toggle-web-indent ()
+  (interactive)
+  ;; web development
+  (if (or (eq major-mode ' js-mode) (eq major-mode ' js2-mode))
+  (progn
+    (setq js-indent-level (if (= js-indent-level 2) 4 2))
+    (setq js2-basic-offset (if (= js2-basic-offset 2) 4 2))))
+
+  (if (eq major-mode ' web-mode)
+      (progn (setq web-mode-markup-indent-offset (if (= web-mode-makeup-indent-offset 2) 4 2))
+	   (setq web-mode-css-indent-offset (if (= web-mode-css-indent-offset 2) 4 2))
+	   (setq web-mode-code-indent-offset (if (= web-mode-code-indent-offset 2) 4 2))))
+
+  (if (eq major-mode ' css-mode)
+      (setq css-indent-offset (if (= css-indent-offset 2) 4 2)))
+
+  (setq indent-tabs-mode nil))
+
+#+END_SRC
+** occur and imenu
+
+1. improve occur
+
+#+BEGIN_SRC 
+(defun occur-dwim ()
+  "Call 'occur' with a same default"
+  (interactive)
+  (push (if (region-active-p)
+	    (buffer-substring-no-properties
+	     (region-beginning)
+	     (region-end))
+	     (let ((sym (thing-at-point ' symbol)))
+	       (when (stringp sym)
+		 (regexp-quote sym))))
+	  regexp-history)
+	(call-interactively ' occur))
+
+(global-set-key ("M-s o") ' occur-dwim)
+
+
+#+END_SRC
+
+2. improve imenu
+
+#+BEGIN_SRC 
+
+
+
+#+END_SRC
+** wrap region mode, expand-region, and iedit mode
+
+1. expand-region
+C-=
+
+
+2. iedit
+C-;
+
+3. region mode ;; for js-2
+
+
+

@@ -1,0 +1,66 @@
+* Spacemacs Rocks Season2 (Day 4)
+
+** Talk more about load, load-file, require, provide and auto-laod
+
+** Better defaults
+
+   1. Indent-region or buffer
+
+      #+BEGIN_SRC 
+
+      
+      #+END_SRC
+
+** Dired mode and file related oeprations
+1. copy, delete and rename file
+   Copy/Delete/Rename files and folders
+
+
+#+BEGIN_SRC 
+
+;; dired -reuse current buffer by press 'a'
+(put ' dired-find-alternate-file 'disabled nil)
+
+;; always delete and copy recursively
+(setq dired-recursive-deletes ' always)
+(setq dired-recursive-copies ' always)
+
+;; if there is a dired buffer displayed in the next window, use its current subdir, instead of current
+   subdir of this dired buffer
+(setq dired-dwim-target t)
+
+(define-key dired-mode-map (kbd "RET") ' dired-find-alternate-file)
+
+;; less typing when Emacs ask you yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+#+END_SRC
+   +: to create diretory
+   C-x C-f: to open/create a file
+   g: to refresh dired buffer
+   C: copy file
+   d: delete file
+
+2. add new file and folder
+
+   +: add a new folder
+   C-x C-f to create a new file.
+
+3. open dired of current buffer
+C-c d
+#+BEGIN_SRC 
+(require ' dired-x)
+
+#+END_SRC
+
+after applying this setting, we could press 'C-x C-j' to jump to the dired buffer of current file
+
+
+4. open finder on Mac. (optional)
+   
+   Packages :
+   
+   reveal-in-osx-finder for openning the finder of the current file
+
+
+

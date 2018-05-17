@@ -14,9 +14,14 @@
 
 (require ' init-packages)
 (require ' init-ui)
-(require ' init-better-defaults)
 (require ' init-org)
 (require ' init-keybindings)
+(require ' init-better-defaults)
+
+;;(autoload ' autoload-init-better-defaults "init-better-defaults")
+;;(autoload-init-better-defaults)
+
 
 (setq custom-file (expand-file-name "~/.emacs.d/lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
+

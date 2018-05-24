@@ -1,0 +1,57 @@
+* Spacemacs Rocks Season2 (Day 7)
+
+** Tweak C-w to delete the former word
+
+** Evil (it's not Baidu!) Turn Emacs into Vim in one second ...
+
+1. install Evil plugin
+
+2. tell the differences between Evil and Vim
+
+3. Evil state = Vim mode
+
+   evil normal state
+   evil insert state
+   evil visual state
+   evil motion state
+   evil emacs state
+   evil operator state (diw) 
+
+4. configure Evil leader key
+
+5. press 'C-z' to toggle between Normal and Emacs state
+
+6. Made some modes to use emacs-state
+
+#+BEGIN_SRC 
+
+(dolist (mode ' (ag-mode
+                 flycheck-error-list-mode 
+                 git-rebase-mode)
+)
+                 (add-to-list ' evil-emacs-state-modes mode))
+
+#+END_SRC
+
+7. binding h/j/k/l key
+#+BEGIN_SRC 
+
+(add-hook ' occur-mode-hook
+            (lambda ()
+             (evil-add-hjkl-bindings occur-mode-map ' emacs
+              (kbd "/")                   ' evil-search-forward
+              (kbd "n")                   ' evil-search-next
+              (kbd "N")                   ' evil-search-previous
+              (kbd "C-d")                 ' evil-scroll-down
+              (kbd "C-u")                 ' evil-scroll-up   
+)))
+
+#+END_SRC
+
+Add this to Dired mode, ibuffer mode?
+
+** Which key 
+
+** Design your own key bindings
+
+** Bonus Time: Search Org notes

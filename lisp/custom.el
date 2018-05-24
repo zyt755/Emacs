@@ -7,9 +7,11 @@
  '(custom-safe-themes
    (quote
     ("95b0bc7b8687101335ebbf770828b641f2befdcf6d3c192243a251ce72ab1692" default)))
+ '(evil-leader/leader "SPC")
+ '(org-pomodoro-long-break-length 40)
  '(package-selected-packages
    (quote
-    (iedit expand-region web-mode reveal-in-osx-finder popwin smartparens counsel swiper smex company-arduino company hungry-delete)))
+    (evil-surround powerline window-numbering evil-leader evil helm-ag org-pomodoro iedit expand-region web-mode reveal-in-osx-finder popwin smartparens counsel swiper smex company-arduino company hungry-delete)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 110))
 (custom-set-faces

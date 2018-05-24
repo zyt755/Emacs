@@ -1,4 +1,5 @@
 
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -15,8 +16,9 @@
 (require ' init-packages)
 (require ' init-ui)
 (require ' init-org)
-(require ' init-keybindings)
 (require ' init-better-defaults)
+
+
 
 ;;(autoload ' autoload-init-better-defaults "init-better-defaults")
 ;;(autoload-init-better-defaults)
@@ -25,3 +27,5 @@
 (setq custom-file (expand-file-name "~/.emacs.d/lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
+
+(require ' init-keybindings)

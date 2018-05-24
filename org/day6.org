@@ -29,13 +29,16 @@ use org-capture to take notes
    search speed: ag > pt > ack > grep
 
 #+BEGIN_SRC 
-
+brew install the_silver_searcher
+apt-get install silversearcher-ag
 #+END_SRC
 
 
 ** Show javascript errors with flycheck
 
 1. flycheck-checkers
+
+;; check for javascript on time, help you code javascript
 
 2.eslint
 

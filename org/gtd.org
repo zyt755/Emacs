@@ -1,7 +1,14 @@
-** Learn Emacs
+k** Learn Emacs
 
 *** set company time
 
 ** Learn Hacking Emacs
 
 ** Learn Security
+* agenda
+
+** TODO [#B] learn Emacs
+   DEADLINE: <2018-05-23 Wed 22:00> SCHEDULED: <2018-05-23 Wed 20:00>
+   CLOCK: [2018-05-23 Wed 21:06]
+   CLOCK: [2018-05-23 Wed 21:04]
+

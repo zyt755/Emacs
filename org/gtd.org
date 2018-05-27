@@ -12,3 +12,5 @@ k** Learn Emacs
    CLOCK: [2018-05-23 Wed 21:06]
    CLOCK: [2018-05-23 Wed 21:04]
 
+** TODO [#B] learn Emacs
+

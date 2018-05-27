@@ -15,6 +15,7 @@
 
 (require ' cl)
 
+(require ' use-package)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/monokai-emacs-master/")
 (load-theme 'monokai t)
@@ -109,6 +110,10 @@
 (require ' evil-surround)
 (global-evil-surround-mode 1)
 
+
+(evilnc-default-hotkeys)
+
+(which-key-mode 1)
 
 
 

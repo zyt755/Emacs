@@ -11,7 +11,7 @@
  '(org-pomodoro-long-break-length 40)
  '(package-selected-packages
    (quote
-    (evil-surround powerline window-numbering evil-leader evil helm-ag org-pomodoro iedit expand-region web-mode reveal-in-osx-finder popwin smartparens counsel swiper smex company-arduino company hungry-delete)))
+    (use-package which-key evil-nerd-commenter evil-surround powerline window-numbering evil-leader evil helm-ag org-pomodoro iedit expand-region web-mode reveal-in-osx-finder popwin smartparens counsel swiper smex company-arduino company hungry-delete)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 110))
 (custom-set-faces

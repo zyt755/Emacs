@@ -1,0 +1,79 @@
+* Spacemacs Rocks Season2 (Day9) 
+
+Topic: Macro and Use-package
+
+* What is macro?
+
+Code with generate code?
+
+#+BEGIN_SRC 
+
+(defmacro inc (var)
+(list ' setq var (list ' 1+ var)))
+
+#+END_SRC
+
+#+BEGIN_SRC 
+
+(setq my-var 1)
+(macroexpand ' (inc my-var))
+
+#+END_SRC
+
+Write macro is almost the same as writing function elisp.
+
+* What are differences between function and macro?
+
+** Evaluation: the macro arguments are the actual expressions appearing in the macro call.
+
+
+** Expansion: the value returned by the macro body is an laternate Lisp expression, also known as the expansion of the macro
+
+** examples:
+
+back quote matters.
+
+#+BEGIN_SRC 
+
+(sp-local-pair ' emacs-lisp-mode "'" nil :actions nil)
+
+#+END_SRC   
+
+#+BEGIN_SRC 
+
+(defun my-print (number)
+(message "%d" number))
+
+(my-print 2)
+
+(my-print (+ 2 3))
+
+(defmacro my-print-2 (number)
+` (message "%d" ， number))
+
+(quote (+ 1 1))
+
+(my-print-2 2)
+
+(my-print-2 (+ 2 3))
+
+
+
+
+#+END_SRC
+
+* Why Macro?
+
+** A more useful exmaple of Elisp macro
+
+** Use-package and basic usage
+
+*** a more safe require
+
+*** group config into one place
+
+*** autoload and bind keys easily
+
+*** make your load faster 
+
+*** and more? Spacemacs use it a lot 

@@ -121,7 +121,12 @@
 	  regexp-history)
 	(call-interactively ' occur))
 
+(setq which-key-side-window-location ' right)
 
+(dolist (mode ' (ag-mode
+		 occur-mode
+		 git-rebase-mode))
+  (add-to-list ' evil-emacs-state-modes mode))
 
 
 (provide ' init-better-defaults)

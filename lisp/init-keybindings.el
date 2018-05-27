@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-h C-k") ' find-function-on-key)
 
 ;; github
-(global-set-key (kbd "C-c p f") ' counsel-git)
+;; (global-set-key (kbd "C-c p f") ' counsel-git)
 
 ;;auto-tab
 (global-set-key (kbd "C-M-\\") ' indent-region-or-buffer)
@@ -69,7 +69,18 @@
   "wm" ' delete-other-windows
 )
 
+(define-key evil-normal-state-map (kbd ",/") ' evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map (kbd ",/") ' evilnc-comment-or-uncomment-lines)
 
+(add-hook ' occur-mode-hook
+	    (lambda ()
+	      (evil-add-hjkl-bindings occur-mode-map ' emacs
+		(kbd "/")             ' evil-search-forward
+		(kbd "n")             ' evil-search-next
+		(kbd "N")             ' evil-search-previous
+		(kbd "C-d")           ' evil-scroll-down
+		(kbd "C-u")           ' evil-scroll-up
+		)))
 
 
 

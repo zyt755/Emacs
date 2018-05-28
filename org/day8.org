@@ -32,3 +32,8 @@ ad-do-it)))
 
 
 #+END_SRC
+
+
+*** manager packages in command line
+
+*** test packages in Cask

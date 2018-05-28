@@ -27,6 +27,10 @@
 (global-company-mode t)
 
 
+(eval-after-load "company"
+  ' (add-to-list ' company-backends ' company-anaconda))
+(add-hook ' python-mode-hook ' anaconda-mode)
+
 (require ' popwin)
 (popwin-mode t)
 
@@ -113,7 +117,7 @@
 
 (evilnc-default-hotkeys)
 
-(which-key-mode 1)
+(which-key-mode t)
 
 
 

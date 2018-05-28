@@ -1,0 +1,61 @@
+* Spacemacs Rocks Seasons2 (Day 10)
+  
+  Topic: Company-mode and auto-completition
+
+  Cask and macro/use-package
+
+** Fix previous issues
+
+** how company-mode 
+   
+   1. backend for the completion sources and front end to display the condidates
+
+      2. C-h v company-backends
+	 
+	 C-h v C-h f 
+
+	 h = help
+
+	 3. try company-file and company-ispell, M-x
+	    
+	    company-ispell helps you spell the word if you do not remember
+
+	    company-file helps you to find the file
+
+	    4. C-h C-f to view the backend implementation
+
+
+** Why my company sucks?
+   
+   1. Python anaconda-mode not works
+
+      2. Some backends require build with a server-client architecture: company-anaconda(company python), company-jedi(company python, but not as good as anaconda), company-ycmd(c++), company-tern(js) etc
+
+	 3. At first, you should make sure the server side is working properly and then you want to make sure you use the right backend
+	    
+	    4. how to fix anaconda on Mac
+	       
+	       make sure that company-anaconda, company-ycmd is in front of company-dabbrev. If company-dabbrec is before anaconda, they will not work.
+	       
+	       e.g. 
+
+	       #+BEGIN_SRC
+
+(add-hook ' python-mode-hook
+lambda()
+(set (make-local-variable ' company-backends) ' ((company-anaconda company-dabbrev-code) company-dabbrev)))
+
+	       
+	       #+END_SRC
+	       
+	       #+BEGIN_SRC 
+
+(setq tramp-ssh-controlmaster-options 
+"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+	       
+	       #+END_SRC
+
+** Groups backend
+   
+** Write a Simple company backend
+
